@@ -1,0 +1,27 @@
+{
+  "name": "workout-log",
+  "version": "1.0.0",
+  "description": "Full stack fitness logging application.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jxhnkndl/workout-log.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jxhnkndl/workout-log/issues"
+  },
+  "homepage": "https://github.com/jxhnkndl/workout-log#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.7",
+    "sequelize": "^6.5.0"
+  }
+}

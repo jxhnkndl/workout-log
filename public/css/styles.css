@@ -55,6 +55,11 @@
     justify-content: center;
 }
 
+main {
+    background-color: rgb(58, 48, 58);
+    width: 100%;
+}
+
 /* APPLIES TO THE view_workout.handlebars FILE ONLY */
 
 @media screen and (max-width: 650px) {

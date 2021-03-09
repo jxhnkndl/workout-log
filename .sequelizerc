@@ -1,7 +1,0 @@
-// Import path object
-const path = require("path");
-
-// Export configuration
-module.exports = {
-  "config": path.resolve("config", "config.js")
-}

@@ -1,0 +1,50 @@
+/* APPLIES TO BOTH index.handlebars (add_workout & view_workouts) FILES */
+
+@media screen and (max-width: 676px) {
+    /* .modal-dialog {
+      max-width: 400px;
+      margin-left: 20px;
+      margin-top: 100px;
+    
+    } */
+    .login-button {
+        margin-left: 0px;
+    }
+}
+
+.navbar {
+    border-bottom: 1px solid black;
+    background-color: white;
+}
+
+.logo {
+    color: black;
+}
+
+.navbar-toggler {
+    color: black;
+}
+
+.nav-item {
+    color: black;
+}
+
+.button {
+    border: .5px solid;
+    border-color: rgb(49, 95, 245);
+}
+
+.card-header {
+    height: 50px;
+    justify-content: center;
+    font-weight: 300;
+}
+
+.card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* APPLIES TO THE add_workout.handlebars FILE ONLY */
+
+/* APPLIES TO THE view_workout.handlebars FILE ONLY */

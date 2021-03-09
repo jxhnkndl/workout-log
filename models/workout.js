@@ -1,7 +1,8 @@
+// Define Workout model
 module.exports = (sequelize, DataTypes) => {
   const Workout = sequelize.define("Workout", {
     workout_date: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.DATE,
       allowNull: false
     },
     category: DataTypes.STRING,

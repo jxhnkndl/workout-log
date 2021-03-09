@@ -1,7 +1,7 @@
 -- Set up database
-DROP DATABASE IF EXISTS workout_db;
-CREATE DATABASE workout_db;
-USE workout_db;
+DROP DATABASE IF EXISTS workouts_db;
+CREATE DATABASE workouts_db;
+USE workouts_db;
 
 -- Workouts table
 CREATE TABLE workouts (
@@ -11,5 +11,7 @@ CREATE TABLE workouts (
   distance DECIMAL(10,2),
   duration INT,
   details TEXT,
+  createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id)
 );

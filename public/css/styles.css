@@ -68,13 +68,8 @@ main {
     }
 }
 
-body {
+body, html {
     background-color: rgb(58, 48, 58);
-    height: 100%;
-    width: 100%;
-}
-
-html {
     height: 100%;
     width: 100%;
 }

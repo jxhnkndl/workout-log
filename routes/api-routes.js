@@ -1,6 +1,9 @@
 // Import models
 const db = require('../models');
 
+// Import paths
+const path = require("path");
+
 // API routes
 module.exports = (app) => {
   // TEST JSON
@@ -10,6 +13,6 @@ module.exports = (app) => {
 
   // TEST HTML
   app.get('/', (req, res) => {
-    res.send('JOGLOGGER: COMING SOON');
+    res.sendFile(path.join(__dirname, '../index.html'));
   });
 };

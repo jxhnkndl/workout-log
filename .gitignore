@@ -1,8 +1,4 @@
-# .DS_Store
+.env
 .DS_Store
-
-# node_modules
 node_modules
-
-# sandbox.js
 sandbox.js

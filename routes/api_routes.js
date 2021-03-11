@@ -27,8 +27,8 @@ module.exports = (app) => {
   app.delete('/api/workouts/:id', (req, res) => {
     db.Workout.destroy({
       where: {
-        id: req.params.id
-      }
+        id: req.params.id,
+      },
     }).then((dbWorkout) => res.json(dbWorkout));
   });
 };

@@ -8,7 +8,11 @@
                     </div>
                     <!-- Div to hold workouts that have yet to be completed -->
                     <div class="card-body mb-4">
-
+                            {{#each workouts}}
+                                {{#unless completed}}
+                                    {{> workout_todo completed=false}}
+                                {{/unless}}
+                            {{/each}}
 
                     </div>
                 </div>

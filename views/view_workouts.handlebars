@@ -1,5 +1,5 @@
 <main id="view-workouts">
-    <div class="container">
+    <div id="container">
         <div class="row mt-4">
             <div class="col-12 col-md-6 mt-2 column">
                 <div class="card mb-2">
@@ -8,7 +8,11 @@
                     </div>
                     <!-- Div to hold workouts that have yet to be completed -->
                     <div class="card-body mb-4">
-
+                            {{#each workouts}}
+                                {{#unless completed}}
+                                    {{> workout_todo completed=false}}
+                                {{/unless}}
+                            {{/each}}
 
                     </div>
                 </div>
@@ -21,7 +25,11 @@
                     </div>
                     <!-- Div to hold completed workouts that have yet to be deleted -->
                     <div class="card-body mb-4">
-
+                            {{#each workouts}}
+                                {{#if completed}}
+                                    {{> workout_completed completed=true}}
+                                {{/if}}
+                            {{/each}}
 
                     </div>
                 </div>

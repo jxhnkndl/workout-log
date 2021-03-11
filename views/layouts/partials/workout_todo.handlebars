@@ -1,0 +1,19 @@
+<div class="mt-4">
+    <h4>{{category}}</h4>
+    <br>
+    <p class="mt-1">
+        <a class="btn" data-toggle="collapse" href="#collapseDetails" role="button" aria-expanded="false" aria-controls="collapseDetails">
+        View Details
+        </a>
+    </p>
+    <div class="collapse" id="collapseDetails">
+        <div class="card card-body">
+            <p>Date: {{workout_date}}</p>
+            <p>Distance: {{distance}}</p>
+            <p>Duration: {{duration}}</p>
+            <p>Workout Details: {{details}}</p>
+        </div>
+    </div>
+
+    <button class="complete-workout btn btn-success" data-id="{{id}}" data-complete="{{completed}}"><i class="fas fa-check"></i> Workout Completed</button>
+</div>

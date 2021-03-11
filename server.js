@@ -1,7 +1,7 @@
 // Import Express
-const path = require('path');
 const express = require('express');
 const exphbs = require('express-handlebars');
+const path = require('path');
 
 // Init Express
 const app = express();
@@ -20,10 +20,11 @@ app.use(express.json());
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-// Routes
-require('./routes/api-routes.js')(app);
+// Import HTML and API routes
+require('./routes/html_routes.js')(app);
+require('./routes/api_routes.js')(app);
 
 // Start listening
 app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}.`);
+  console.log(`Listening on ${PORT}.`);
 });

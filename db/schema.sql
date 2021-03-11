@@ -11,6 +11,7 @@ CREATE TABLE workouts (
   distance DECIMAL(10,2),
   duration INT,
   details TEXT,
+  completed BOOLEAN,
   createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id)

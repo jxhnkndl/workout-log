@@ -25,7 +25,11 @@
                     </div>
                     <!-- Div to hold completed workouts that have yet to be deleted -->
                     <div class="card-body mb-4">
-
+                            {{#each workouts}}
+                                {{#if completed}}
+                                    {{> workout_completed completed=true}}
+                                {{/if}}
+                            {{/each}}
 
                     </div>
                 </div>

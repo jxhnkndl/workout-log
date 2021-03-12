@@ -7,28 +7,52 @@ const path = require('path');
 // Export API router
 module.exports = (app) => {
   // Get all workouts
-  app.get('/api/workouts', (req, res) => {
-    db.Workout.findAll({}).then((dbWorkout) => res.json(dbWorkout));
+  app.get('/api/workouts', async (req, res) => {
+    try {
+      const result = await db.Workout.findAll({});
+      res.status(200).json({ success: false, data: result });
+    } catch {
+      res.status(500).json({ success: false });
+    }
   });
 
   // Add new workout
-  app.post('/api/workouts', (req, res) => {
-    const { date, category, distance, duration, details } = req.body;
-
-    db.Workout.create(req.body).then((dbWorkout) => {
+  app.post('/api/workouts', async (req, res) => {
+    try {
+      const result = await db.Workout.create(req.body);
       res.status(201).json({
         success: true,
-        id: dbWorkout.insertId,
+        data: result.dataValues,
       });
-    });
+    } catch {
+      res.status(500).json({ success: false });
+    }
   });
 
   // Delete workout
-  app.delete('/api/workouts/:id', (req, res) => {
-    db.Workout.destroy({
-      where: {
-        id: req.params.id,
-      },
-    }).then((dbWorkout) => res.json(dbWorkout));
+  app.delete('/api/workouts/:id', async (req, res) => {
+    try {
+      const result = await db.Workout.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+      res.status(204).json({ success: true });
+    } catch {
+      res.status(500).json({ success: false });
+    }
+  });
+
+  // Update workout's completed status
+  app.put('/api/workouts/', async (req, res) => {
+    try {
+      const result = await db.Workout.update(
+        { completed: req.body.completed },
+        { where: { id: req.body.id } }
+      );
+      res.status(200).json({ success: true });
+    } catch {
+      res.status(500).json({ success: false });
+    }
   });
 };

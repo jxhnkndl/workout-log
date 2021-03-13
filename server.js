@@ -6,6 +6,9 @@ const path = require('path');
 // Init Express
 const app = express();
 
+// Import models
+const db = require('./models');
+
 // Config PORT
 const PORT = process.env.PORT || 8080;
 
@@ -24,7 +27,9 @@ app.set('view engine', 'handlebars');
 require('./routes/html_routes.js')(app);
 require('./routes/api_routes.js')(app);
 
-// Start listening
-app.listen(PORT, () => {
-  console.log(`Listening on ${PORT}.`);
+// Sync database and start server
+db.sequelize.sync().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Listening on ${PORT}.`);
+  });
 });

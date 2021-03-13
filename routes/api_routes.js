@@ -30,11 +30,11 @@ module.exports = (app) => {
   });
 
   // Delete workout
-  app.delete('/api/workouts/:id', async (req, res) => {
+  app.delete('/api/workouts/', async (req, res) => {
     try {
       const result = await db.Workout.destroy({
         where: {
-          id: req.params.id,
+          id: req.body.id,
         },
       });
       res.status(204).json({ success: true });

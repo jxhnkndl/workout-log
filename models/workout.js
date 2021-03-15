@@ -9,6 +9,11 @@ module.exports = (sequelize, DataTypes) => {
     distance: DataTypes.DECIMAL(10, 2),
     duration: DataTypes.INTEGER,
     details: DataTypes.TEXT,
+    completed: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
+    }
   });
 
   return Workout;

@@ -28,6 +28,7 @@
 
 .nav-item {
     color: black;
+    font-family: 'Shippori Mincho B1', serif;
 }
 
 .button {
@@ -44,14 +45,27 @@
 
 .card {
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    font-family: 'Shippori Mincho B1', serif;
+}
+
+#sticky-footer {
+    color: black;
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: small;
+    margin-top: 50px;
+}
+
+a:hover {
+    font-weight: 800;
+    text-decoration: underline;
+    color: black;
 }
 
 /* APPLIES TO THE add_workout.handlebars FILE ONLY */
 
 .container {
     width: 400px;
-    
 }
 
 .card-header-title {
@@ -61,6 +75,11 @@
 main {
     background-color: rgb(58, 48, 58);
     width: 100%;
+}
+
+.card-footer-item {
+    color: black;
+    font-weight: 600;
 }
 
 /* APPLIES TO THE view_workout.handlebars FILE ONLY */

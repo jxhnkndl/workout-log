@@ -1,15 +1,15 @@
 // Import models
-const db = require('../models');
+const db = require("../models");
 
 // Import paths
-const path = require('path');
+const path = require("path");
 
 // Export API router
 module.exports = (app) => {
   // Get all workouts
-  app.get('/api/workouts', async (req, res) => {
+  app.get("/api/workouts", async (req, res) => {
     try {
-      const result = await db.Workout.findAll({});
+      const result = await db.Workout.findAll({ raw: true });
       res.status(200).json({ success: false, data: result });
     } catch {
       res.status(500).json({ success: false });
@@ -17,7 +17,7 @@ module.exports = (app) => {
   });
 
   // Add new workout
-  app.post('/api/workouts', async (req, res) => {
+  app.post("/api/workouts", async (req, res) => {
     try {
       const result = await db.Workout.create(req.body);
       res.status(201).json({
@@ -30,21 +30,21 @@ module.exports = (app) => {
   });
 
   // Delete workout
-  app.delete('/api/workouts/', async (req, res) => {
+  app.delete("/api/workouts/", async (req, res) => {
     try {
       const result = await db.Workout.destroy({
         where: {
           id: req.body.id,
         },
       });
-      res.status(204).json({ success: true });
+      res.json({ success: true });
     } catch {
       res.status(500).json({ success: false });
     }
   });
 
   // Update workout's completed status
-  app.put('/api/workouts/', async (req, res) => {
+  app.put("/api/workouts/", async (req, res) => {
     try {
       const result = await db.Workout.update(
         { completed: req.body.completed },

@@ -19,6 +19,7 @@
 
 .logo {
     color: black;
+    font-family: 'Shippori Mincho B1', serif;
 }
 
 .navbar-toggler {
@@ -38,6 +39,7 @@
     height: 50px;
     justify-content: center;
     font-weight: 300;
+    font-family: 'Shippori Mincho B1', serif;
 }
 
 .card {
@@ -49,6 +51,7 @@
 
 .container {
     width: 400px;
+    
 }
 
 .card-header-title {

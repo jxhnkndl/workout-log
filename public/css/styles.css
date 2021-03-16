@@ -31,11 +31,10 @@
     font-family: 'Shippori Mincho B1', serif;
 }
 
-.button {
-    border: .5px solid;
-    border-color: rgb(49, 95, 245);
+.bye-btn {
+    background-color: rgb(147, 80, 150);
+    color: white;
 }
-
 .card-header {
     height: 50px;
     justify-content: center;

@@ -7,6 +7,7 @@
 
   - [Description](#description)
   - [Demo](#demo)
+  - [Installation](#installation)
   - [Usage](#usage)
   - [Contributors](#contributors)
   - [Tests](#tests)
@@ -22,10 +23,23 @@
   ## Demo
 
   ![Application Preview]()
-  
- 
-  ## Usage
+
   To launch the application, please visit this link to Heroku - 
+  
+  ## Installation
+  Joglogger requires the installation of Express, MySQL, Sequelize, and Handlebars from npm to run properly in a local dev environment. To install the project's npm dependencies, navigate to the project's root directory and run:
+
+  ```
+  npm i
+  ``` 
+ 
+  Once all third-party packages have been successfully installed, the application is ready to use. For more details, reference the application's ```package.json``` file.
+  
+  ## Usage
+  To launch the application from the command line, navigate to the project's root directory and run:
+  ```
+  node server.js
+  ```
   
   When the user opens the Joglogger, they are prompted with a card input to enter the data associated with their session. They are to choose what workout category their workout was related to, how long they did the workout for, the distance they went with this workout (if applicable), the date the did or plan to do this workout, and any other details the inputs did not cover (i.e. reps, weight, etc.). From there, they can click "Add Workout" and that data will be sent to the database. They will be prompted with a modal to either add another workout or view the workouts they've already entered. If they choose to add another workout, they will be shown the same page with an empty input form. 
   

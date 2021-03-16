@@ -12,6 +12,28 @@ $(document).ready(function () {
       workout_date: workout_date,
       details: details,
     };
+
+    if (distance === "") {
+      showAlert(
+        "is-danger",
+        "Whoops! Looks like your distance is missing. Please provide a valid distance and try again. If distance is not applicable, please input 0."
+      );
+      return;
+    }
+    if (duration === "") {
+      showAlert(
+        "is-danger",
+        "Whoops! Looks like your duration is missing. Please provide a valid duration and try again."
+      );
+      return;
+    }
+    if (workout_date === "") {
+      showAlert(
+        "is-danger",
+        "Whoops! Looks like the date is missing. Please provide a valid date and try again."
+      );
+      return;
+    }
     console.log("Add Workout");
     console.log(data);
     $.ajax({
@@ -23,9 +45,9 @@ $(document).ready(function () {
       },
       data: JSON.stringify(data),
       success: function (res) {
+        clearFields();
+        showAlert("is-primary", "Workout added to schedule!");
         console.log(res);
-        // redirect page to workout page
-        window.location.href = "/view_workouts";
       },
       error: function () {
         console.error("Error");
@@ -61,7 +83,6 @@ $(document).ready(function () {
     });
   });
 
-
   $(".delete-workout").on("click", function (e) {
     const id = $(e.target).attr("data-id");
     $.ajax({
@@ -82,18 +103,26 @@ $(document).ready(function () {
       },
     });
   });
+  //show alert function
+  function showAlert(color, message) {
+    if ($(".notification")) {
+      $(".notification").remove();
+    }
+    const alertDiv = $("<div>");
+    alertDiv.addClass(`notification is-light has-text-justified m-2 ${color}`);
+    alertDiv.text(message);
+    $("#form-top").before(alertDiv);
+    setTimeout(function () {
+      $(".notification").remove();
+    }, 2000);
+  }
 
+  // Clear fields in UI
+  function clearFields() {
+    $("#category").val("");
+    $("#distance").val("");
+    $("#duration").val("");
+    $("#date").val("");
+    $("#details").val("");
+  }
 });
-
-// $(document).ready (function() {
-//   $('view-workout').on('click', (event) => {
-//       event.preventDefault();
-//       console.log("view workout clicked");$.ajax({
-//           url:'api/workouts/',
-//           method:'GET',
-//           success: function(res) {
-//               console.log(res);
-//           }
-//       })
-//   })
-// })

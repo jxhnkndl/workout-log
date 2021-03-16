@@ -1,16 +1,18 @@
-<div class="mt-2">
-    <h4 class="completed-workout-name">{{category}} - {{workout_date}}</h4>
+<div class="mt-4">
+    <h4 class="completed-workout-name">{{workout_date}} - {{category}}</h4>
     <button class="delete-workout btn bye-btn" data-id="{{id}}"><i class="fas fa-trash-alt"></i> Delete Workout</button>
     <p class="mt-1">
-        <a class="btn" data-toggle="collapse" href="#collapseDetails" role="button" aria-expanded="false" aria-controls="collapseDetails">
+        <a class="btn" data-toggle="collapse" href="#workout-{{id}}" role="button" aria-expanded="false" aria-controls="workout-{{id}}">
         View Details
         </a>
     </p>
-    <div class="collapse" id="collapseDetails">
-        <div class="card card-body">
+    <div class="collapse" id="workout-{{id}}">
+        <div class="m-0 card card-body">
             <p>Distance: {{distance}}</p>
             <p>Duration: {{duration}}</p>
             <p>Workout Details: {{details}}</p>
         </div>
     </div>
+
+    <hr>
 </div>

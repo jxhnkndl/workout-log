@@ -1,12 +1,12 @@
 /* APPLIES TO BOTH index.handlebars (add_workout & view_workouts) FILES */
 
 @media screen and (max-width: 676px) {
-    /* .modal-dialog {
+    .modal-dialog {
       max-width: 400px;
       margin-left: 20px;
-      margin-top: 100px;
+      margin-top: 50px;
     
-    } */
+    }
     .login-button {
         margin-left: 0px;
     }
@@ -35,6 +35,10 @@
     background-color: rgb(147, 80, 150);
     color: white;
 }
+
+.bye-btn:hover {
+    font-weight: 400;
+}
 .card-header {
     height: 50px;
     justify-content: center;
@@ -62,9 +66,20 @@ a:hover {
 }
 
 /* APPLIES TO THE add_workout.handlebars FILE ONLY */
-
+.optional {
+    float: left;
+    margin: -5px;
+}
 .container {
     width: 400px;
+}
+
+.modal-dialog {
+    text-align: center;
+}
+
+#myModal {
+    margin-top: 100px;
 }
 
 .card-header-title {

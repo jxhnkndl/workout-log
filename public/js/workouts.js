@@ -61,7 +61,6 @@ $(document).ready(function () {
     });
   });
 
-
   $(".delete-workout").on("click", function (e) {
     const id = $(e.target).attr("data-id");
     $.ajax({
@@ -82,7 +81,14 @@ $(document).ready(function () {
       },
     });
   });
-
+  // Clear fields in UI
+  function clearFields() {
+    $("#category").val("");
+    $("#distance").val("");
+    $("#duration").val("");
+    $("#date").val("");
+    $("#details").val("");
+  }
 });
 
 // $(document).ready (function() {

@@ -60,6 +60,29 @@ $(document).ready(function () {
       },
     });
   });
+
+
+  $(".delete-workout").on("click", function (e) {
+    const id = $(e.target).attr("data-id");
+    $.ajax({
+      url: "/api/workouts",
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-type": "application/json",
+      },
+      data: JSON.stringify({ id: id }),
+      success: function (res) {
+        console.log(res);
+        // redirect page to workout page
+        window.location.href = "/view_workouts";
+      },
+      error: function () {
+        console.error("Error");
+      },
+    });
+  });
+
 });
 
 // $(document).ready (function() {

@@ -10,7 +10,7 @@
                     <div class="card-body mb-4">
                             {{#each workouts}}
                                 {{#unless completed}}
-                                    {{> workout_todo completed=false}}
+                                    {{> workout_todo completed=true}}
                                 {{/unless}}
                             {{/each}}
 
@@ -27,7 +27,7 @@
                     <div class="card-body mb-4">
                             {{#each workouts}}
                                 {{#if completed}}
-                                    {{> workout_completed completed=true}}
+                                    {{> workout_completed completed=false}}
                                 {{/if}}
                             {{/each}}
 

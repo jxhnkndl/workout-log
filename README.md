@@ -22,7 +22,7 @@
   
   ## Demo
 
-  ![Application Preview]()
+  ![Application Preview](assets/Joglogger.gif)
 
   To launch the application, please visit this link to Heroku - https://vast-inlet-10059.herokuapp.com/add_workout
   

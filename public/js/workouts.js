@@ -1,10 +1,36 @@
+// Wait for DOM to load
 $(document).ready(function () {
-  $("#add-a-workout").on("click", function () {
-    var category = $("#category").val();
-    var distance = $("#distance").val();
-    var duration = $("#duration").val();
-    var workout_date = $("#date-input").val();
-    var details = $("#details").val();
+  // Event Listener -> Add workout button
+  $('#add-a-workout').on('click', function () {
+    // Capture user input
+    var category = $('#category').val();
+    var distance = $('#distance').val();
+    var duration = $('#duration').val();
+    var workout_date = $('#date-input').val();
+    var details = $('#details').val();
+
+    // Validate user input
+    if (distance === '') {
+      showAlert(
+        'is-danger',
+        'Whoops! Looks like your distance is missing. Please provide a valid distance and try again.'
+      );
+      return;
+    } else if (duration === '') {
+      showAlert(
+        'is-danger',
+        'Whoops! Looks like your duration is missing. Please provide a valid duration and try again.'
+      );
+      return;
+    } else if (workout_date === '') {
+      showAlert(
+        'is-danger',
+        'Whoops! Looks like the date is missing. Please provide a valid date and try again.'
+      );
+      return;
+    }
+
+    // Format user input
     var data = {
       category: category,
       distance: distance,
@@ -13,116 +39,110 @@ $(document).ready(function () {
       details: details,
     };
 
-    if (distance === "") {
-      showAlert(
-        "is-danger",
-        "Whoops! Looks like your distance is missing. Please provide a valid distance and try again. If distance is not applicable, please input 0."
-      );
-      return;
-    }
-    if (duration === "") {
-      showAlert(
-        "is-danger",
-        "Whoops! Looks like your duration is missing. Please provide a valid duration and try again."
-      );
-      return;
-    }
-    if (workout_date === "") {
-      showAlert(
-        "is-danger",
-        "Whoops! Looks like the date is missing. Please provide a valid date and try again."
-      );
-      return;
-    }
-    console.log("Add Workout");
-    console.log(data);
+    // Send new workout object back to API
     $.ajax({
-      url: "/api/workouts",
-      method: "POST",
+      url: '/api/workouts',
+      method: 'POST',
       headers: {
-        Accept: "application/json",
-        "Content-type": "application/json",
+        Accept: 'application/json',
+        'Content-type': 'application/json',
       },
       data: JSON.stringify(data),
       success: function (res) {
-        clearFields();
-        showAlert("is-primary", "Workout added to schedule!");
-        console.log(res);
+        // If successful, clear input fields and show success alert
+        resetFields();
+        showAlert('is-primary', 'Workout added to schedule!');
       },
       error: function () {
-        console.error("Error");
+        console.error('Error');
       },
     });
   });
 
-  $(".complete-workout").on("click", function (e) {
-    const id = $(e.target).attr("data-id");
-    const completed = $(e.target).attr("data-complete");
+  // Event Listener -> Complete workout buttons
+  $('.complete-workout').on('click', function (e) {
+    // Capture the workout's id and completed values
+    const id = $(e.target).attr('data-id');
+    const completed = $(e.target).attr('data-complete');
+
     // Format data to send back to API
     const data = {
       id: id,
       completed: completed,
     };
 
+    // Send updated completed status back to API
     $.ajax({
-      url: "/api/workouts",
-      method: "PUT",
+      url: '/api/workouts',
+      method: 'PUT',
       headers: {
-        Accept: "application/json",
-        "Content-type": "application/json",
+        Accept: 'application/json',
+        'Content-type': 'application/json',
       },
       data: JSON.stringify(data),
       success: function (res) {
-        console.log(res);
-        // redirect page to workout page
-        window.location.href = "/view_workouts";
+        // If successful, reload the page to reflect the new status
+        location.reload('/view_workouts');
       },
       error: function () {
-        console.error("Error");
+        console.error('Error');
       },
     });
   });
 
-  $(".delete-workout").on("click", function (e) {
-    const id = $(e.target).attr("data-id");
+  // Event Listener -> Delete workout buttons
+  $('.delete-workout').on('click', function (e) {
+    // Capture workout id
+    const id = $(e.target).attr('data-id');
+
+    // Send delete request back to API
     $.ajax({
-      url: "/api/workouts",
-      method: "DELETE",
+      url: '/api/workouts',
+      method: 'DELETE',
       headers: {
-        Accept: "application/json",
-        "Content-type": "application/json",
+        Accept: 'application/json',
+        'Content-type': 'application/json',
       },
       data: JSON.stringify({ id: id }),
       success: function (res) {
-        console.log(res);
-        // redirect page to workout page
-        window.location.href = "/view_workouts";
+        // If successful, reload the page to reflect the new status
+        location.reload('/view_workouts');
       },
       error: function () {
-        console.error("Error");
+        console.error('Error');
       },
     });
   });
-  //show alert function
+
+  // Helper -> Show alerts
   function showAlert(color, message) {
-    if ($(".notification")) {
-      $(".notification").remove();
+    // Set alert time
+    const staysVisible = 4000;
+
+    // If there's already a visible notification, remove it
+    if ($('.notification')) {
+      $('.notification').remove();
     }
-    const alertDiv = $("<div>");
+
+    // Create new alert
+    const alertDiv = $('<div>');
     alertDiv.addClass(`notification is-light has-text-justified m-2 ${color}`);
     alertDiv.text(message);
-    $("#form-top").before(alertDiv);
+
+    // Insert alert into DOM
+    $('#form-top').before(alertDiv);
+
     setTimeout(function () {
-      $(".notification").remove();
-    }, 2000);
+      $('.notification').remove();
+    }, staysVisible);
   }
 
-  // Clear fields in UI
-  function clearFields() {
-    $("#category").val("");
-    $("#distance").val("");
-    $("#duration").val("");
-    $("#date").val("");
-    $("#details").val("");
+  // Helper -> Reset input fields
+  function resetFields() {
+    $('#category').val('Cardio - Running');
+    $('#distance').val('');
+    $('#duration').val('');
+    $('#date').val('');
+    $('#details').val('');
   }
 });

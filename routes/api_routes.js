@@ -4,9 +4,9 @@ const db = require("../models");
 // Import paths
 const path = require("path");
 
-// Export API router
+// Export API router function
 module.exports = (app) => {
-  // Get all workouts
+  // API -> Get all workouts from db
   app.get("/api/workouts", async (req, res) => {
     try {
       const result = await db.Workout.findAll({ raw: true });
@@ -16,7 +16,7 @@ module.exports = (app) => {
     }
   });
 
-  // Add new workout
+  // API -> Add new workout to db
   app.post("/api/workouts", async (req, res) => {
     try {
       const result = await db.Workout.create(req.body);
@@ -29,7 +29,7 @@ module.exports = (app) => {
     }
   });
 
-  // Delete workout
+  // API -> Delete workout from db
   app.delete("/api/workouts/", async (req, res) => {
     try {
       const result = await db.Workout.destroy({
@@ -43,7 +43,7 @@ module.exports = (app) => {
     }
   });
 
-  // Update workout's completed status
+  // API -> Update workout's completed status in db
   app.put("/api/workouts/", async (req, res) => {
     try {
       const result = await db.Workout.update(

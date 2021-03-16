@@ -47,18 +47,13 @@
 
 
   ## Contributors
-  J.K. Royston - <jkroyston@gmail.com> - Back-end connection to database and server
-  [GitHub](https://github.com/jxhnkndl)
+  J.K. Royston - <jkroyston@gmail.com> - [J.K.'s GitHub](https://github.com/jxhnkndl) - Back-end connection to database and server
 
-  Emily Todt - <emilybtodt@gmail.com> - Front-end user interface
-  [GitHub](https://www.github.com/todtsies)
+  Emily Todt - <emilybtodt@gmail.com> - [Emily's GitHub](https://www.github.com/todtsies) - Front-end user interface
 
-  Kevin Spoth - <kspoth@richmond.edu> - Front-end JavaScript
-  [GitHub](https://github.com/kspoth)
+  Kevin Spoth - <kspoth@richmond.edu> - [Kevin's GitHub](https://github.com/kspoth) - Front-end JavaScript
 
-  Kenneth Keller - <kenkanifffromct21@gmail.com> - Front-end JavaScript
-  [GitHub](https://github.com/kenkanifffromct)
-
+  Kenneth Keller - <kenkanifffromct21@gmail.com> - [Kenneth's GitHub](https://github.com/kenkanifffromct) - Front-end JavaScript
 
   ## Tests
   No tests were included.

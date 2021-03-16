@@ -14,7 +14,7 @@
                                 <label class="label">Workout Category</label>
                                 <div class="control">
                                     <div class="select">
-                                        <select>
+                                        <select id="category">
                                             <option>Cardio - Running</option>
                                             <option>Cardio - Swimming</option>
                                             <option>Cardio - Elliptical</option>
@@ -31,7 +31,7 @@
                             <div class="field">
                                 <label class="label">Distance</label>
                                 <div class="control">
-                                    <input class="input" type="text" placeholder="If distance is not a factor, type 0.">
+                                    <input class="input" type="text" placeholder="If distance is not a factor, type 0." id="distance">
                                 </div>
                             </div>
 
@@ -39,7 +39,7 @@
                                 <label class="label">Duration</label>
                                 <div class="control">
                                     <input class="input" type="text"
-                                        placeholder="How long did you do this exercise for?">
+                                        placeholder="How long did you do this exercise for?" id="duration">
                                 </div>
                             </div>
 
@@ -53,15 +53,15 @@
                                 <label class="label">Workout Details</label>
                                 <div class="control">
                                     <textarea class="textarea"
-                                        placeholder="Enter any other details about this workout. (i.e. reps, weight, etc.)"></textarea>
+                                        placeholder="Enter any other details about this workout. (i.e. reps, weight, etc.)" id="details"></textarea>
                                 </div>
                             </div>
 
 
                         </div>
                     </div>
-                    <footer class="card-footer">
-                        <a href="#" type="submit" class="card-footer-item">Add Workout</a>
+                    <footer class="card-footer" id="add-a-workout">
+                        <a href="/view_workouts" type="submit" class="card-footer-item">Add Workout</a>
                     </footer>
                 </div>
             </div>

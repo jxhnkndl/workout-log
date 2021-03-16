@@ -12,6 +12,14 @@ $(document).ready(function () {
       workout_date: workout_date,
       details: details,
     };
+    if (distance === "") {
+      showAlert(
+        "is-danger",
+        "Whoops! Looks like your distance is missing. Please provide a valid distance and try again. If distance is not applicable, please input 0."
+      );
+      return;
+    }
+
     console.log("Add Workout");
     console.log(data);
     $.ajax({

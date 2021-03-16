@@ -81,6 +81,20 @@ $(document).ready(function () {
       },
     });
   });
+  //show alert function
+  function showAlert(color, message) {
+    if ($(".notification")) {
+      $(".notification").remove();
+    }
+    const alertDiv = $("<div>");
+    alertDiv.addClass(`notification is-light has-text-justified m-2 ${color}`);
+    alertDiv.text(message);
+    $("#form-top").before(alertDiv);
+    setTimeout(function () {
+      $(".notification").remove();
+    }, 2000);
+  }
+
   // Clear fields in UI
   function clearFields() {
     $("#category").val("");
@@ -90,16 +104,3 @@ $(document).ready(function () {
     $("#details").val("");
   }
 });
-
-// $(document).ready (function() {
-//   $('view-workout').on('click', (event) => {
-//       event.preventDefault();
-//       console.log("view workout clicked");$.ajax({
-//           url:'api/workouts/',
-//           method:'GET',
-//           success: function(res) {
-//               console.log(res);
-//           }
-//       })
-//   })
-// })

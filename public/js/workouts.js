@@ -48,8 +48,6 @@ $(document).ready(function () {
         clearFields();
         showAlert("is-primary", "Workout added to schedule!");
         console.log(res);
-        // redirect page to workout page
-        window.location.href = "/view_workouts";
       },
       error: function () {
         console.error("Error");

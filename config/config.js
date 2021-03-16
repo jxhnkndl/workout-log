@@ -1,5 +1,7 @@
+// Import module
 require("dotenv").config();
 
+// Configure dev, testing, and production environments
 module.exports = {
   "development": {
     "username": process.env.DB_USER,

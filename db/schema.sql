@@ -3,7 +3,7 @@ DROP DATABASE IF EXISTS workouts_db;
 CREATE DATABASE workouts_db;
 USE workouts_db;
 
--- Workouts table
+-- Create workouts table
 CREATE TABLE workouts (
   id INT NOT NULL AUTO_INCREMENT,
   workout_date DATE NOT NULL,

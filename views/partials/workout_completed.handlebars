@@ -1,5 +1,6 @@
 <div class="mt-2">
     <h4 class="completed-workout-name">{{category}}</h4>
+    <button class="delete-workout btn bye-btn" data-id="{{id}}"><i class="fas fa-trash-alt"></i> Delete Workout</button>
     <p class="mt-1">
         <a class="btn" data-toggle="collapse" href="#collapseDetails" role="button" aria-expanded="false" aria-controls="collapseDetails">
         View Details
@@ -13,6 +14,4 @@
             <p>Workout Details: {{details}}</p>
         </div>
     </div>
-
-    <button class="delete-workout btn bye-btn" data-id="{{id}}"><i class="fas fa-trash-alt"></i> Delete Workout</button>
 </div>

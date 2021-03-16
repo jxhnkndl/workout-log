@@ -12,6 +12,7 @@ $(document).ready(function () {
       workout_date: workout_date,
       details: details,
     };
+
     if (distance === "") {
       showAlert(
         "is-danger",
@@ -19,7 +20,20 @@ $(document).ready(function () {
       );
       return;
     }
-
+    if (duration === "") {
+      showAlert(
+        "is-danger",
+        "Whoops! Looks like your duration is missing. Please provide a valid duration and try again."
+      );
+      return;
+    }
+    if (workout_date === "") {
+      showAlert(
+        "is-danger",
+        "Whoops! Looks like the date is missing. Please provide a valid date and try again."
+      );
+      return;
+    }
     console.log("Add Workout");
     console.log(data);
     $.ajax({
@@ -31,6 +45,8 @@ $(document).ready(function () {
       },
       data: JSON.stringify(data),
       success: function (res) {
+        clearFields();
+        showAlert("is-primary", "Workout added to schedule!");
         console.log(res);
         // redirect page to workout page
         window.location.href = "/view_workouts";

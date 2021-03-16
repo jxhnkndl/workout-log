@@ -24,12 +24,9 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- External CSS link -->
-    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 
     <!-- External Javascript and jQuery links -->
-    <script src="/public/js/workouts.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -49,10 +46,10 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item mt-1">
-                        <a href="/views/add_workout.handlebars" class="nav-link">Add Workout</a>
+                        <a href="/add_workout" class="nav-link add-workout">Add Workout</a>
                     </li>
                     <li class="nav-item mr-2 mt-1">
-                        <a href="/views/view_workouts.handlebars" class="nav-link">View Workouts</a>
+                        <a href="/view_workouts" class="nav-link view-workout">View Workouts</a>
                     </li>
                     
                 </ul>
@@ -71,6 +68,9 @@
     </footer>
     <!-- End of Footer -->
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="/js/workouts.js"></script>
 </body>
 
 </html>

@@ -6,8 +6,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     category: DataTypes.STRING,
-    distance: DataTypes.DECIMAL(10, 2),
-    duration: DataTypes.INTEGER,
+    distance: DataTypes.STRING,
+    duration: DataTypes.STRING,
     details: DataTypes.TEXT,
     completed: {
       type: DataTypes.BOOLEAN,

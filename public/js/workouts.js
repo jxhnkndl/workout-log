@@ -50,8 +50,11 @@ $(document).ready(function () {
       data: JSON.stringify(data),
       success: function (res) {
         // If successful, clear input fields and show success alert
+        
+        $("#myModal").modal('show');
+        $("body.modal-open").removeAttr("style");
         resetFields();
-        showAlert('is-primary', 'Workout added to schedule!');
+
       },
       error: function () {
         console.error('Error');

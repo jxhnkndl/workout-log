@@ -1,5 +1,4 @@
 // Import modules
-const { reverse } = require('dns');
 const path = require('path');
 const db = require('../models');
 
@@ -21,7 +20,7 @@ module.exports = (app) => {
       const data = await db.Workout.findAll({ 
         raw: true, 
         order: [
-          ['id', 'DESC']
+          ['workout_date', 'DESC']
       ]});
 
       // Reverse date for UI

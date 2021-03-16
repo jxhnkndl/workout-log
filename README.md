@@ -24,7 +24,7 @@
 
   ![Application Preview]()
 
-  To launch the application, please visit this link to Heroku - 
+  To launch the application, please visit this link to Heroku - https://vast-inlet-10059.herokuapp.com/add_workout
   
   ## Installation
   Joglogger requires the installation of Express, MySQL, Sequelize, and Handlebars from npm to run properly in a local dev environment. To install the project's npm dependencies, navigate to the project's root directory and run:

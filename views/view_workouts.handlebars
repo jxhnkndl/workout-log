@@ -1,3 +1,4 @@
+{{!-- Main Content Container --}}
 <main id="view-workouts">
     <div id="container">
         <div class="row mt-4">
@@ -6,14 +7,13 @@
                     <div class="card-header text-center">
                         Workouts to Complete
                     </div>
-                    <!-- Div to hold workouts that have yet to be completed -->
+                    <!-- Partial Container: Incomplete Workouts -->
                     <div class="card-body mb-4">
-                            {{#each workouts}}
-                                {{#unless completed}}
-                                    {{> workout_todo completed=true}}
-                                {{/unless}}
-                            {{/each}}
-
+                        {{#each workouts}}
+                        {{#unless completed}}
+                        {{> workout_todo completed=true}}
+                        {{/unless}}
+                        {{/each}}
                     </div>
                 </div>
             </div>
@@ -23,14 +23,13 @@
                     <div class="card-header" id="completed-workouts-header">
                         Completed Workouts
                     </div>
-                    <!-- Div to hold completed workouts that have yet to be deleted -->
+                    {{!-- Partial Container: Completed Workouts --}}
                     <div class="card-body mb-4">
-                            {{#each workouts}}
-                                {{#if completed}}
-                                    {{> workout_completed completed=false}}
-                                {{/if}}
-                            {{/each}}
-
+                        {{#each workouts}}
+                        {{#if completed}}
+                        {{> workout_completed completed=false}}
+                        {{/if}}
+                        {{/each}}
                     </div>
                 </div>
             </div>

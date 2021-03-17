@@ -1,15 +1,22 @@
+{{!-- Main content container --}}
 <main id="add-workout">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="card">
+
+                    {{!-- Form header --}}
                     <header class="card-header">
                         <p class="card-header-title">
                             Plan Exercise Session
                         </p>
                     </header>
+
+                    {{!-- Add Workout Form --}}
                     <div class="card-content" id="form-top">
                         <div class="content">
+
+                            {{!-- Category Input --}}
                             <div class="field">
                                 <label class="label">Workout Category *</label>
                                 <div class="control">
@@ -28,41 +35,43 @@
                                 </div>
                             </div>
 
+                            {{!-- Distance Input --}}
                             <div class="field">
                                 <label class="label">Distance *</label>
                                 <div class="control">
-                                    <input class="input" type="text" placeholder="If distance is not a factor, type 0."
-                                        id="distance">
+                                    <input class="input" type="text" placeholder="If distance is not a factor, type 0." id="distance">
                                 </div>
                             </div>
 
+                            {{!-- Duration Input --}}
                             <div class="field">
                                 <label class="label">Duration *</label>
                                 <div class="control">
-                                    <input class="input" type="text"
-                                        placeholder="How long did you do this exercise for?" id="duration">
+                                    <input class="input" type="text" placeholder="How long did you do this exercise for?" id="duration">
                                 </div>
                             </div>
 
+                            {{!-- Date Input --}}
                             <div class="field">
                                 <label for="date-input" class="label">Date *</label>
                                 <div class="control">
                                     <input class="form-control" type="date" value="" id="date-input">
                                 </div>
                             </div>
+
+                            {{!-- Details Input --}}
                             <div class="field">
                                 <label class="label">Workout Details</label>
                                 <div class="control">
-                                    <textarea class="textarea"
-                                        placeholder="Enter any other details about this workout. (i.e. reps, weight, etc.)"
-                                        id="details"></textarea>
+                                    <textarea class="textarea" placeholder="Enter any other details about this workout. (i.e. reps, weight, etc.)" id="details"></textarea>
                                 </div>
                             </div>
 
-                        <p class="optional"><i><sub>* Required field</sub></i></p>
-                        
+                            <p class="optional"><i><sub>* Required field</sub></i></p>
                         </div>
                     </div>
+
+                    {{!-- Add Workout Button --}}
                     <footer class="card-footer" id="add-a-workout">
                         <a href="#" type="submit" class="card-footer-item">Add Workout</a>
                     </footer>
@@ -70,23 +79,23 @@
             </div>
         </div>
     </div>
-
 </main>
 
+{{!-- Modal: Add another workout or view workouts --}}
 <div id="myModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title w-100">You successfully added a workout session!</h5>
-                </div>
-                <div class="modal-body">
-                    <p>What would you like to do next?</p>
-                    <form>
-                        <a class="btn close_modal pt-1 bye-btn" href="/add_workout" role="button">Add Another Workout</a>
-                        &nbsp;
-                        <a class="btn close_modal pt-1 bye-btn" href="/view_workouts" role="button">View Workouts</a>
-                    </form>
-                </div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title w-100">You successfully added a workout session!</h5>
+            </div>
+            <div class="modal-body">
+                <p>What would you like to do next?</p>
+                <form>
+                    <a class="btn close_modal pt-1 bye-btn" href="/add_workout" role="button">Add Another Workout</a>
+                    &nbsp;
+                    <a class="btn close_modal pt-1 bye-btn" href="/view_workouts" role="button">View Workouts</a>
+                </form>
             </div>
         </div>
     </div>
+</div>
